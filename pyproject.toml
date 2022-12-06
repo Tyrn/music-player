@@ -3,7 +3,7 @@ name = "music-player"
 version = "0.1.0"
 description = ""
 authors = ["Tyrn <a@b.com>"]
-readme = "README.md"
+readme = "README.rst"
 packages = [{include = "music_player"}]
 
 [tool.poetry.dependencies]

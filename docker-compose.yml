@@ -1,0 +1,7 @@
+services:
+  buildozer:
+    image: buildozer:latest
+    volumes:
+      - .:/home/user/hostcwd
+      - ./.buildozer:/home/user/.buildozer
+      - ./.gradle:/home/user/.gradle
