@@ -28,7 +28,8 @@ PLATFORM = platform
 
 MUSIC_DIR = {
     #'Windows':'C:\\Users\\'+USER+'\\Music',
-    "linux": "~/common/Downloads/Books/Audio",
+    # "linux": "/home/alexey/common/Downloads/Books/Audio",
+    "linux": "/home/alexey/common/Downloads/Music",
     #'Darwin': '',
     "android": "",
 }
@@ -236,11 +237,11 @@ class MusicApp(MDApp):
 
 
 def get_all_music(path):
-    print(path)
+    print(f"get_all_music(path={path})")
     music_list = []
     for root, dirnames, filenames in os.walk(path):
         for nm in filenames:
-            print(nm)
+            # print(f"get_all_music(nm={nm})")
             if os.path.splitext(nm)[1] == ".mp3":
                 music_list.append(
                     {
