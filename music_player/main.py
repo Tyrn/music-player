@@ -183,7 +183,7 @@ class ListPage(BoxLayout):
 
     def to_playing(self, isinstance):
         current = self.music_list[int(isinstance.id)]
-        app.play(self.music_list[int(isinstance.id)]["path"])
+        app.play(current["path"])
         app.screen_manager.current = "playingpage"
         app.playingpage.init_config(
             current["meta"]["title"], current["meta"]["artist"], app.playing.length
@@ -237,11 +237,9 @@ class MusicApp(MDApp):
 
 
 def get_all_music(path):
-    print(f"get_all_music(path={path})")
     music_list = []
     for root, dirnames, filenames in os.walk(path):
         for nm in filenames:
-            # print(f"get_all_music(nm={nm})")
             if os.path.splitext(nm)[1] == ".mp3":
                 music_list.append(
                     {
@@ -272,7 +270,7 @@ def get_meta(music):
         duration = str(metadata["streaminfo"]["duration"])
     except:
         pass
-    print(artist, duration, title)
+    # print(artist, duration, title)
     return {"artist": artist, "duration": duration, "title": title}
 
 
