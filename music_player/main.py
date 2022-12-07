@@ -17,12 +17,13 @@ from kivymd.uix.button import MDIconButton
 from kivy.core.window import Window
 from kivy.uix.image import Image
 from kivy.uix.label import Label
-
-# import getpass
 from kivy.utils import platform
 
+# import getpass
 
 # USER = getpass.getuser()
+
+# os.environ["KIVY_AUDIO"] = "ffpyplayer"
 
 PLATFORM = platform
 
