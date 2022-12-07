@@ -26,12 +26,23 @@ from kivy.utils import platform
 
 PLATFORM = platform
 
+USERPATH = os.path.expanduser("~")
+
+if platform == "android":
+    from android.storage import primary_external_storage_path
+    from android.storage import secondary_external_storage_path
+    from android.permissions import request_permissions, Permission
+
+    USERPATH = primary_external_storage_path()
+    # USERPATH = secondary_external_storage_path()
+    request_permissions(
+        [Permission.WRITE_EXTERNAL_STORAGE, Permission.READ_EXTERNAL_STORAGE]
+    )
+
 MUSIC_DIR = {
     #'Windows':'C:\\Users\\'+USER+'\\Music',
-    # "linux": "/home/alexey/common/Downloads/Books/Audio",
-    "linux": "/home/alexey/common/Downloads/Music",
-    #'Darwin': '',
-    "android": "",
+    "linux": USERPATH + "/common/Downloads/Music/Ernie",
+    "android": USERPATH + "/Music/Ernie",
 }
 
 

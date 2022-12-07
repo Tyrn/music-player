@@ -36,7 +36,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy,kivymd,ffpyplayer
+requirements = python3,kivy,kivymd,audio_metadata,tbm_utils,pendulum,dateutil,pytzdata,attrs,pprintpp,wrapt,bidict,bitstruct,more_itertools,ffpyplayer
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
